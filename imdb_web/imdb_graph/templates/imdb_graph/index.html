@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'imdb_graph/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'imdb_graph/css/style.css' %}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script type="text/javascript" src="{% static 'imdb_graph/js/jquery-3.2.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'imdb_graph/js/popper.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'imdb_graph/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'imdb_graph/js/Chart.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'imdb_graph/js/graph.js' %}?v=0012"></script>
+  </head>
+  <body>
+    <div class="main-header">
+      <h1>Imdb Graph</h1>
+    </div>
+    <div class="row flex-center">
+      <div class="col-lg-6">
+        <input type="text" id="input-keyword" class="form-control" placeholder="Search for movies..." aria-label="Search for movies...">
+      </div>
+    </div>
+    <div class="auto-complete row flex-center">
+      <div class="col-lg-6">
+        <ul id="auto-complete-results" class="auto-complete-ul">
+        </ul>
+      </div>
+    </div>
+    <div class="row flex-center">
+      <div class="col-lg-6 cards-wrapper">
+        <div id="movie-cards" class="movie-cards">
+
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 20px; padding-bottom: 150px;" class="row flex-center">
+      <div id="chart-container" class="chart-container">
+        <canvas id="movie-chart" class="movie-chart"></canvas>
+      </div>
+    </div>
+
+  </body>
+</html>

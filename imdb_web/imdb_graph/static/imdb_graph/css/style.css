@@ -1,0 +1,185 @@
+body {
+  background-color: rgb(37, 40, 48);
+}
+
+p {
+  margin: 0px;
+}
+
+.main-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 3px;
+  padding: 10px;
+}
+
+.main-header h1 {
+  color: white;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auto-complete .entry {
+  color: rgb(217, 217, 217);
+  text-align: left;
+  padding-left: 28px;
+  background-color: white;
+}
+
+.auto-complete ul {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 0 5px;
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
+
+.auto-complete ul li.entry {
+  color: rgb(188, 188, 188);
+  text-align: left;
+  padding-left: 28px;
+  background-color: white;
+  padding-left: 15px;
+  height: 30px;
+}
+
+.auto-complete ul li.entry:hover {
+  cursor: pointer;
+}
+
+.auto-complete ul li.entry.selected {
+  background-color: rgb(255, 255, 225);
+}
+
+.asdf {
+  color: white;
+}
+
+.cards-wrapper {
+  overflow-x: auto;
+}
+
+.movie-cards {
+  margin-top: 15px;
+  min-width: max-content;
+  border-spacing: 10px 5px;
+}
+
+.movie-cards .movie-card {
+  height: 325px;
+  min-width: 220px;
+  position: relative;
+  display: table-cell;
+  margin: auto;
+}
+
+.movie-card .movie-poster {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.movie-info {
+  position: absolute;
+  height: 100%;
+  /**
+   * For some reason specifying width: 100% results in a bug,
+   * and so does width: 220px;
+   */
+  width: 221px;
+  z-index: 1;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.75;
+
+  display: none;
+  flex-flow: column;
+}
+
+.movie-info-row {
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+  margin-bottom: 5px;
+}
+
+.movie-title {
+  color: white;
+  z-index: 2;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.movie-info-1 {
+  color: white;
+  font-size: 14px;
+  width: 100%;
+}
+
+.movie-info-small {
+  color: white;
+  font-size: 12px;
+  width: 100%;
+}
+
+.close-icon {
+  color: white;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 3;
+}
+
+.close-icon:hover {
+  color: rgb(190, 190, 190);
+  cursor: pointer;
+}
+
+.star-icon {
+  font-size: 22px !important;
+  color: rgb(255, 225, 100);
+  margin-right: 0px;
+}
+
+.movie-info-link {
+  color: rgb(140, 220, 255);
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.movie-info-link:hover {
+  color: rgb(100, 190, 240);
+}
+
+.movie-break {
+  padding: 2px;
+  border-bottom: 1px solid white;
+  width: 80%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.chart-container {
+  height: 500px;
+  width: 1000px;
+  display: none;
+}
+
+#input-keyword {
+  /*
+   * auto complete is absolute so it's 100% ignores the padding.
+   * This input is not absolute so we need to give it the extra
+   * 30px of width that is equal to the padding.
+   */
+  width: calc(100% + 30px);
+}

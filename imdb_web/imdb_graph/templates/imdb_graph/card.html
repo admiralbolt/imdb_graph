@@ -1,0 +1,41 @@
+<div data-id="{{movie.id}}" class="movie-card">
+  <img class="movie-poster" src="{{movie.image_url}}" />
+  <div class="movie-info">
+    <i class="material-icons close-icon">close</i>
+    <div class="movie-info-row">
+      <p class="movie-title">{{movie.title}}</p>
+    </div>
+    <div class="movie-info-row">
+      <p class="movie-info-1">{{info_string | safe}}</p>
+    </div>
+    <div class="movie-info-row flex-center">
+      {% for i in score_range %}
+        {% if i <= movie.imdb_score %}
+          <i class="material-icons star-icon">star</i>
+        {% elif i <= score_plus_half %}
+          <i class="material-icons star-icon">star_half</i>
+        {% else %}
+          <i class="material-icons star-icon">star_border</i>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="movie-info-row flex-center">
+      <p class="movie-info-1">{{director.name}}</p>
+    </div>
+    <div class="movie-info-row flex-center">
+      <p class="movie-info-small">{{actor_string | safe}}</p>
+    </div>
+    <div class="movie-info-row flex-center">
+      <div class="movie-break"></div>
+    </div>
+    <div class="movie-info-row flex-center">
+      <p style="font-weight: bold;" class="movie-info-small">{{genre_string | safe}}</p>
+    </div>
+    <div class="movie-info-row flex-center">
+      <p class="movie-info-small">{{keyword_string | safe}}</p>
+    </div>
+    <div class="movie-info-row flex-center">
+      <a target="_blank" href="{{movie.imdb_link}}" class="movie-info-link">{{movie.imdb_link}}</a>
+    </div>
+  </div>
+</div>
